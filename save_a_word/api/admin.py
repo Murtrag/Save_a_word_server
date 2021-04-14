@@ -1,10 +1,10 @@
 from django.contrib import admin
 from api import models
 
-# Register your models here.
-admin.site.register(models.Word)
+@admin.register(models.Word)
+class LanguageAdmin(admin.ModelAdmin):
+	list_display  = ('pk','owner', 'language', 'word',)
 
-# admin.site.register(models.Language)
 @admin.register(models.Language)
 class LanguageAdmin(admin.ModelAdmin):
 	list_display  = ('pk', 'code', 'name',)
