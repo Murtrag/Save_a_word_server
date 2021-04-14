@@ -5,6 +5,9 @@ class Language(models.Model):
 	code = models.CharField(max_length=15)
 	name = models.CharField(max_length=50)
 
+	def __str__(self):
+		return self.code
+
 
 class Word(models.Model):
 	owner = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -12,3 +15,5 @@ class Word(models.Model):
 	word = models.TextField()
 	# translation = models.ForeignKey()
 
+	def __str__(self):
+		return f'{self.word}'
