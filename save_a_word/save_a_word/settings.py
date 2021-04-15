@@ -25,7 +25,7 @@ SECRET_KEY = 'zv9@d&yjn^6vite1n-d!l1^k2f!zq&=qokg(976zy^9mkjkp1('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['saveaword.pythonanywhere.com']
 
 
 # Application definition
