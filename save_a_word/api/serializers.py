@@ -10,7 +10,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class WordSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Word
-        fields = ['owner','language', 'word', 'id']
+        fields = ['owner','language', 'word', 'translation', 'id']
 
 class LanguageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
