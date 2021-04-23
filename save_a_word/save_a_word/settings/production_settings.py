@@ -61,7 +61,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "SaveAWord$saveaword",
         "USER": "SaveAWord",
-        "PASSWORD": os.environ.get("admin123"),
+        "PASSWORD": os.environ.get("SAVE_WORD_DB_PASS"),
         "HOST": "SaveAWord.mysql.pythonanywhere-services.com",
     }
 }
