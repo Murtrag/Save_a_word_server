@@ -10,7 +10,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'words', views.WordViewSet)
+router.register(r'words', views.WordViewSet, basename="words")
 router.register(r'language', views.LanguageViewSet)
 
 urlpatterns = [

@@ -11,14 +11,7 @@ class WordSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Word
         fields = ['owner','language', 'word', 'translation', 'id']
-
 class LanguageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Language
         fields = ['code', 'name']
-
-# class LanguageSerializer(serializers.Serializer):
-#     name = serializers.CharField(required=False, allow_blank=True, max_length=100)
-    # class Meta:
-    #     model = models.Language
-    #     fields = ['code', 'name']
