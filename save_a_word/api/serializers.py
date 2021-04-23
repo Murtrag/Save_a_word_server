@@ -8,9 +8,11 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'username', 'email', 'is_staff']
 
 class WordSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.CharField(required=False)
     class Meta:
         model = models.Word
         fields = ['owner','language', 'word', 'translation', 'id']
+
 class LanguageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Language
