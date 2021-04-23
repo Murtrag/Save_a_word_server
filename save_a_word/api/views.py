@@ -47,5 +47,4 @@ class LanguageViewSet(viewsets.ModelViewSet):
     """
     queryset = models.Language.objects.all().order_by('id')
     serializer_class = serializers.LanguageSerializer
-    # permission_classes = [permissions.IsAuthenticated]
     http_method_names = ['get', 'head']
