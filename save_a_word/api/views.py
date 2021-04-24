@@ -1,11 +1,13 @@
+from . import models
+from . import serializers
+from django.http import Http404
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework import viewsets, status
 from django.contrib.auth.models import User
 from rest_framework.response import Response
-from django.http import Http404
-from . import serializers
-from . import models
+from rest_framework.permissions import IsAuthenticated 
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -18,6 +20,8 @@ class WordViewSet(viewsets.ModelViewSet):
     API endpoint that allows word to be viewed or edited.
     """
     serializer_class = serializers.WordSerializer
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     def get_queryset(self):
         try:
             return models.Word.objects.filter(owner=self.request.user)
