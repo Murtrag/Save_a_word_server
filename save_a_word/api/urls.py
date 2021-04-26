@@ -15,4 +15,5 @@ router.register(r'language', views.LanguageViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('api-token-auth/', views.ObtainAuthToken.as_view())
 ]
